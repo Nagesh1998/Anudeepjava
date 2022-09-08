@@ -14,7 +14,7 @@ public class calculator {
 		int b=sc.nextInt();
 		
 		
-		System.out.println("1. Add \n2. Subtract \n3. Multiply \n4. Divide");
+		System.out.println("1. Add \n2. Subtract \n3. Multiply \n4. Divide \5.Mod");
 		int choice=sc.nextInt();
 		
 		sc.close();
@@ -38,8 +38,13 @@ public class calculator {
 
 			
 			case 4:
-				int div=a%b;
+				int div=a/b;
 				System.out.println("Division is : "+div);
+				break;
+				
+			case 5:
+				int mod=a%b;
+				System.out.println("Division is : "+mod);
 				break;
 
 			default:

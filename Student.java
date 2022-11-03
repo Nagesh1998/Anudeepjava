@@ -1,53 +1,57 @@
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.regex.Pattern;
-
-//import Com.Invalidmail.InvalidmailID;
-
-/*3.WAP to write  objects  Student class in a file and then read Student objects from file print to console  whose name starts with "A".
-(Student---id,name,contact); */
-public class Student {//main class
-
-	//data members of student class
-	int id;  //student id
-	String name; //student name
-	String cont; //student contact no
- 
-	public Student() {  //generate default constructor
+public class Student implements Comparable<Student> {
+	private int sid;
+	private String name;
+	private String contact;
+	
+	public Student(int sid, String name) {
 		super();
-		}
-
-	public Student(int id, String name, String cont) { //generate parameterized constructor
-		super();
-		this.id = id;
+		this.sid = sid;
 		this.name = name;
-		this.cont = cont;
 	}
 	
-	public int getId() { //generate getters and setters methods
-		return id;
+	
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-
-	public void setId(int id) { //set id
-		this.id = id;
+	public Student(int sid, String name, String contact) {
+		super();
+		this.sid = sid;
+		this.name = name;
+		this.contact = contact;
 	}
-
-	public String getName() { //get name
+	
+	public int getSid() {
+		return sid;
+	}
+	public void setSid(int sid) {
+		this.sid = sid;
+	}
+	public String getName() {
 		return name;
 	}
-
-	public void setName(String name) {// set name
+	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getCont() { //get contno
-		return cont;
+	public String getContact() {
+		return contact;
 	}
-
-	public void setCont(String cont) { //set contcno
-		this.cont = cont;
+	public void setContact(String contact) {
+		this.contact = contact;
 	}
+	
+	public String toString() {
+		return "Student [sid=" + sid + ", name=" + name + ", contact=" + contact + "]";
 	}
-
-
+	
+	@Override
+	public int compareTo(Student s) {
+		if(this.sid>s.getSid())
+			return 1;
+		else if(this.sid<s.getSid())
+			return -1;
+		else
+			return 0;
+	}
+		
+}
